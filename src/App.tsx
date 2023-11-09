@@ -5,6 +5,15 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  // const [fetchData, setFetchData] = useState([])
+  const fetchAPIStuff = async () => {
+    // const response1 = await fetch('https://api.spacexdata.com/v3/launches')
+    const response2 = await fetch('https://example.com/api/v1/users')
+    // const data = await response1.json()
+    const users = await response2.json();
+    console.log({users})
+    // setFetchData(data)
+  }
 
   return (
     <>
@@ -28,6 +37,9 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <div onClick={fetchAPIStuff}> 
+        Click Me for a simple API call
+      </div>
     </>
   )
 }
