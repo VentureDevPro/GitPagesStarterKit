@@ -1,45 +1,25 @@
-import { useState } from 'react'
+import { Counter } from './features/counter/Counter'
+
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-  // const [fetchData, setFetchData] = useState([])
-  const fetchAPIStuff = async () => {
-    // const response1 = await fetch('https://api.spacexdata.com/v3/launches')
-    const response2 = await fetch('https://example.com/api/v1/users')
-    // const data = await response1.json()
-    const users = await response2.json();
-    console.log({users})
-    // setFetchData(data)
-  }
-
   return (
     <>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
+        <a href="/" >
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
-        <a href="https://react.dev" target="_blank">
+        <a href="/" >
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
       <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
+      <Counter />
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-      <div onClick={fetchAPIStuff}> 
-        Click Me for a simple API call
-      </div>
     </>
   )
 }
